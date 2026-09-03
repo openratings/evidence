@@ -1,0 +1,1 @@
+Byte-identical copies of the data files the report page loads. engine_aggregates.json: aggregates of the frozen 100,000-path engine run (ladder by entry price, fair value by hurdle, IRR histograms, quarterly fans). chart_series.json: the series behind every exhibit, with sources in-file.

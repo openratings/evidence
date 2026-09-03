@@ -1,25 +1,50 @@
 # OR-2026-001 — Anthropic expected IPO — evidence
 
-> **Analytical opinion, not investment advice.**
+> **Analytical opinion, not investment advice.** See `DISCLOSURES.md`.
 
-A probabilistic analysis of the Anthropic IPO (reported for ~October 2026 at a reported ~$2 trillion valuation). This repository holds only the *published* artifacts of the analysis: charts, the issues register from the analyst panel, data provenance, and dated directional calls. The engine (code, parameters, calibrations, prompts, model weights) is private; before the IPO prices, a SHA-256 hash of the private methodology file is published here so that the analysis can later be shown to pre-date the event unaltered.
+The frozen evidence for Open Ratings' first rating action: *Priced as if the Meter Never
+Slows* — the expected Anthropic IPO, rated OR-B− at a $2 trillion entry, from a 100,000-path
+Monte Carlo engine (v1.5r), with ten pre-registered predictions on the not-yet-filed S-1.
 
-## What is here
+## Authoritative artifacts
 
-| folder | contents |
-|---|---|
-| `figures/` | fan charts and probability exhibits (fundamental lens, market-behaviour lens, agreement zone, panel trajectories) |
-| `register/` | the analyst panel's issues register: each disagreement, its category (market / regulatory / technical / competitive), whether it is falsifiable, and what data would settle it |
-| `provenance/` | every quantitative input, dated and sourced, with confidence flags (verified-primary / secondary / single-source / estimate) |
-| `predictions/` | dated directional calls with numbers, and the methodology hash; outcomes are scored (Brier) as quarters resolve |
+The authoritative frozen record is: `article/` (the report source and its typeset PDF),
+`predictions/` (the machine-readable calls and resolution rules), `data/` (the exact data the
+report's exhibits are built from — byte-identical to what the live page serves), `figures/`,
+`referee/` (every pre-publication review, in full), `scoring_protocol.md`, `DISCLOSURES.md`,
+and `SHA256SUMS` covering every file here except itself. The live page at
+https://openratings.ai/ratings/anthropic-2t/ is **presentation only** — it renders these
+artifacts and may evolve cosmetically; the hashes below do not cover it.
 
-## Methodology (techniques named; parameters withheld)
+## Verify
 
-1. **Regime-switching Monte Carlo (fundamental lens).** Five correlated quarterly drivers from a 2026Q4 entry to a 2031Q4 exit — metered-revenue growth with momentum / deceleration / shock regimes, revenue-mix shift, gross-margin path, a Poisson regulatory-access shock process calibrated to the June-2026 export episode, and a valuation multiple conditional on growth, margin and revenue commitment. 100,000 seeded paths. Before any headline number is produced the engine must reproduce, deterministically, the leaked Coatue base case (entry, 2030 ARR, exit value, IRR); this gate passed.
-2. **Kernel-weighted similarity over IPO comparables (market-behaviour lens).** Standardised at-IPO features of 14 large technology listings, a Mahalanobis kernel, and resampling of their 8-quarter post-IPO return paths. Leave-one-out validation retrodicts Snowflake's 2022 re-rating and CoreWeave's post-IPO drawdown.
-3. **Multi-model adversarial analyst panel with belief-revision tracking.** Bull / bear / neutral personas played by several open-weight model families, roles rotating each round; an independent open-weight judge model applies a fixed rubric, accepts a score revision only when it is tied to cited evidence or a simulation result, and logs evidence-driven versus conformity updates separately. Analysts may request engine runs with parameter changes; results enter the next round. Stopping rule: score deltas below threshold for two consecutive rounds, or issues register exhausted.
-4. **State-space backfill** for GPU-rental price series used in the compute-cost discussion (documented separately with per-segment anchor density).
+```
+sha256sum -c SHA256SUMS
+git tag -v freeze-anthropic-2t-v1.0.0   # if you verify signatures
+```
 
-Headline outputs, the fan charts, the register and the convergence trajectories are published here; the private repo holds everything reproducible (`make all` from raw CSVs).
+The freeze is fixed by the git tag `freeze-anthropic-2t-v1.0.0`, its full commit SHA, and the
+Zenodo deposit (DOI in `FREEZE.md`, written at freeze). The Zenodo record archives this entire
+directory, so verification does not depend on this hosting.
 
-*Analytical opinion, not investment advice.*
+## The methodology hash is a commitment, not a disclosure
+
+`predictions/methodology_hash.txt` is the SHA-256 of the private engine methodology file. The
+engine is the commercial asset of this practice and is not published. The hash therefore does
+not let you verify the methodology today — it lets you verify, when Part 2 is scored, that the
+methodology did not move in between. Techniques are named, with update-rule sketches, in the
+report's appendix.
+
+## What is deliberately not here
+
+Engine code, calibrations, prompts-as-run for the analyst passes, and model weights (private,
+commercial). The Monte Carlo run is characterized by the report's appendix and the exported
+aggregates in `data/`; it is a hypothetical scenario analysis, not a reproducible-from-code
+artifact in this repository.
+
+## Errata and versioning
+
+The frozen artifacts in this directory are never edited. A material error is handled by a new
+dated rating action (an erratum or a superseding version) listed in the top-level Rating
+Actions table, leaving this record intact. Scorecards land the same way. If a rating is
+withdrawn, the withdrawal is itself a dated action; nothing is deleted.

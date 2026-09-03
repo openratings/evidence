@@ -1,0 +1,32 @@
+<!-- Alibaba | qwen3.8-max | modelstudio | 13.4s | conflicted=False -->
+
+{
+  "scores": {
+    "grounding": 9,
+    "engine": 8,
+    "substitution": 6,
+    "pentagon": 9,
+    "scoreability": 10,
+    "calibration": 7,
+    "independence": 10,
+    "overreach": 8,
+    "figures": 9,
+    "clarity": 9
+  },
+  "notes": {
+    "grounding": "Every load-bearing number traces to a named source or labeled estimate; the only gap is the unlinked 'Ramp mix print' reference in 'The Pentagon episode' which lacks a specific date or URL unlike other citations.",
+    "engine": "The OR-B- grade derivation at $2T is mechanically sound via the P(lose > half) bracket, but the 12-comp fitted exit multiple driving the tornado chart relies on a sample size that may be statistically insufficient for the claimed precision.",
+    "substitution": "The argument rests heavily on a single-day OpenRouter snapshot and anecdotal desk evidence rather than a time-series correlation between price declines and volume shifts, making the causal weight disproportionate to the statistical evidence.",
+    "pentagon": "The section rigorously distinguishes between legal vindication and commercial loss, explicitly limiting the ChatGPT.mil claim to 'designed capacity, not adoption' without extrapolating beyond the disclosed facts.",
+    "scoreability": "All ten calls are binary, reference specific S-1 line items or market data points, and include explicit resolution criteria that eliminate interpretive ambiguity for future scoring.",
+    "calibration": "Call 3 (GAAP net loss) and Call 10 (trade below first-day close within 26 weeks) are near-certainties given the base rates cited, reducing the informational value of the pre-registration panel despite their validity as checks.",
+    "independence": "Disclosure is exemplary, specifying the author's vendor relationship, lack of equity position, and patent interest in the analysis tooling, allowing readers to fully contextualize potential biases.",
+    "overreach": "The claim in 'The headwind on my own desk' that local hardware setups becoming 'the norm' constitutes 'direct substitution against cloud-metered inference' outruns the provided evidence, which shows only current token allocation, not enterprise capex migration trends.",
+    "figures": "Tables and charts align precisely with textual claims; captions accurately describe data limitations such as the 'one-day snapshot' caveat, and the Mermaid diagrams correctly represent the stated methodology boundaries.",
+    "clarity": "Technical concepts like t-copulas and run-rate distinctions are explained accessibly for institutional readers without sacrificing rigor, though the overall score reflects minor friction in connecting the substitution evidence to the engine's leakage parameter."
+  },
+  "attack_quote": "If setups like mine become the norm rather than the exception among quantitative shops, that is direct substitution against cloud-metered inference: revenue per user falls even while adoption grows.",
+  "attack_why": "A hostile reader would attack this by citing enterprise security, compliance, and model-update latency constraints that make local inference non-substitutable for production API workloads at scale. They would argue the author conflates hobbyist/quant edge-case usage with the enterprise consumption base that drives the $65B run-rate, rendering the substitution mechanism theoretically possible but empirically irrelevant to the valuation.",
+  "kill": "Replace the single-day OpenRouter snapshot and anecdotal desk evidence in the substitution section with a multi-month time-series showing the correlation between frontier-to-cheap price ratios and volume share shifts across a representative enterprise panel.",
+  "overall": 8.0
+}

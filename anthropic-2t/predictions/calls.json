@@ -1,0 +1,95 @@
+{
+ "rating_id": "OR-2026-001",
+ "subject": "Anthropic \u2014 expected IPO",
+ "grade": "OR-B-",
+ "grade_at_valuation_usd_b": 2000,
+ "engine": "v1.5r",
+ "n_paths": 100000,
+ "predictions": [
+  {
+   "id": 1,
+   "title": "the meter, measured",
+   "claim": "The S-1's revenue disclosure will show usage-priced revenue (API plus usage-billed enterprise) at between 40% and 65% of total revenue \u2014 a meter, but not the \"80% metered\" figure that circulated in secondary coverage, and that my own first draft repeated before the model killed it.",
+   "scored_against": "business description / MD&A.",
+   "status": "pending"
+  },
+  {
+   "id": 2,
+   "title": "the floor exists",
+   "claim": "The S-1 will disclose remaining performance obligations, non-cancelable customer commitments, or equivalent contracted future revenue of at least $15 billion.",
+   "scored_against": "revenue notes / RPO disclosure.",
+   "status": "pending"
+  },
+  {
+   "id": 3,
+   "title": "still pre-profit",
+   "claim": "The S-1 will report a GAAP net loss for both the most recent full fiscal year and the most recent interim period.",
+   "scored_against": "financial statements.",
+   "status": "pending"
+  },
+  {
+   "id": 4,
+   "title": "the margin band",
+   "claim": "Gross margin, as disclosed or derivable (revenue less cost of revenue), will fall between 35% and 55% for the most recent period, as reported in GAAP financials, excluding non-GAAP adjustments.",
+   "scored_against": "income statement.",
+   "status": "pending"
+  },
+  {
+   "id": 5,
+   "title": "the commitments",
+   "claim": "Total disclosed compute and purchase commitments will sum to between $120 billion and $300 billion.",
+   "scored_against": "commitments and contingencies note.",
+   "status": "pending"
+  },
+  {
+   "id": 6,
+   "title": "the listing run-rate",
+   "claim": "The most recent quarter disclosed in the S-1, annualized by simple multiplication of the most recent quarter \u00d7 4, will land between $72 billion and $112 billion \u2014 the engine's one-notch band around its $90 billion listing estimate.",
+   "scored_against": "financial statements.",
+   "status": "pending"
+  },
+  {
+   "id": 7,
+   "title": "the company names the risk",
+   "claim": "At least one of the **first ten risk factors** will be dedicated to compute purchase commitments, data-centre capacity, or infrastructure obligations \u2014 scored on that risk factor's own heading and subject matter, not on an exact phrase, so a differently worded heading plainly about the same obligation counts and a passing mention buried inside an unrelated risk does not.",
+   "scored_against": "the first ten risk-factor headings.",
+   "status": "pending"
+  },
+  {
+   "id": 8,
+   "title": "the pricing bracket",
+   "claim": "The IPO will price at a fully diluted market capitalization (offer price \u00d7 fully diluted shares per the prospectus cover) between **$1.2 trillion and $2.2 trillion** \u2014 clear of the $965 billion Series H mark by a real margin, and below the euphoria case. Equivalently, between roughly 13\u00d7 and 24\u00d7 the S-1's annualized most recent quarter. If the two tests disagree, because the disclosed run-rate lands outside the $72\u2013112 billion band of Prediction 6, **the dollar bracket governs**.",
+   "scored_against": "final pricing, prospectus cover.",
+   "status": "pending"
+  },
+  {
+   "id": 9,
+   "title": "the gross-or-net question",
+   "claim": ". The S-1's revenue-recognition note will state whether the company acts as principal or agent on cloud-resold or partner-distributed revenue \u2014 the disclosure that resolves the $169 billion restatement branch in Figure 2.",
+   "scored_against": "revenue-recognition note.",
+   "status": "pending"
+  },
+  {
+   "id": 10,
+   "title": "the path base rate",
+   "claim": "Within 26 weeks of listing, the shares will trade below their first-day closing price at least once \u2014 24 of the 26 comparable listings did.",
+   "scored_against": "post-listing daily prices.",
+   "status": "pending"
+  }
+ ],
+ "resolution_rules": {
+  "ipo_definition": "the first public listing of Anthropic common equity on a US national exchange, whether by traditional IPO, direct listing, or de-SPAC; an acquisition or continued private status is not a listing",
+  "no_listing_path": "if there is never a listing, the pricing (8) and path (10) predictions resolve unresolvable; document predictions still score against any publicly filed S-1",
+  "pricing_source": "prediction 8: offer price x fully diluted shares per the final prospectus cover; prediction 10: primary-exchange official daily closes",
+  "timezone": "America/New_York; dates as printed in the resolving document",
+  "rounding": "values compared at the precision the resolving document discloses; a value on a stated boundary counts as inside the bracket",
+  "dispute_resolution": "the panel majority verdict is final and published with all dissents; there is no appeal; a material scoring error is handled as a new dated erratum action, never by editing the scorecard",
+  "no_s1_deadline": "2027-06-30",
+  "no_s1_by_deadline": "every S-1 prediction resolves unresolvable and is scored as such",
+  "ipo_withdrawn_after_filing": "document predictions (1-7, 9) still score against the filed S-1; pricing (8) and path (10) predictions resolve unresolvable",
+  "ambiguous_or_absent_disclosure": "the prediction resolves unresolvable, never argued into a hit",
+  "reporting": "unresolvable counts against coverage, reported separately from accuracy; both numbers are published",
+  "scored_against": "S-1 predictions: first publicly filed Form S-1 incl. financial statements and notes; market predictions: final pricing; path prediction: post-listing daily prices"
+ },
+ "disclaimer": "Analytical opinion, not investment advice."
+}
