@@ -13,12 +13,24 @@ added, never edited or removed after their freeze.
 
 | Date | ID | Subject | Rating | Evidence |
 |---|---|---|---|---|
-| 2026-09-03 | OR-2026-001 | Anthropic — expected IPO | OR-B− at $2T (draft, freeze pending) | [`anthropic-2t/`](anthropic-2t/) |
+| 2026-09-03 | OR-2026-001 | Anthropic — expected IPO | OR-B− at $2T (frozen v1.0.0) | [`anthropic-2t/`](anthropic-2t/) |
 
 Each rating action gets its own directory: `figures/` (the data behind every chart),
 `predictions/` (the pre-registered calls and their hashes), `register/` (the issues register),
 `provenance/` (source records), and the referee reports. A frozen rating is fixed by a git tag
 (`freeze-<slug>-vX.Y.Z`), its full commit SHA, and a Zenodo DOI, all printed in the report.
+
+## Verify the Anthropic freeze
+
+The original `freeze-anthropic-2t-v1.0.0` annotated tag is retained unchanged as part of the
+published record. The SSH-signed `attest-freeze-anthropic-2t-v1.0.0` tag points to the exact
+same frozen commit (`c2b222207c86abaa5d3864705f48384240f7fb71`) and supplies the missing
+cryptographic signature without rewriting the original tag.
+
+```bash
+git -c gpg.ssh.allowedSignersFile=.github/allowed_signers \
+  verify-tag attest-freeze-anthropic-2t-v1.0.0
+```
 
 ## Notices
 
